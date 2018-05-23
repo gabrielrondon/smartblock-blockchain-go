@@ -1,0 +1,31 @@
+openapi: "3.0.1"
+
+info:
+  title: smartBlock PeerReview
+  description: mining through content
+  version: "0.0.1"
+
+tags:
+  - name: submission
+  - name: validation
+  - name: confirmation
+
+servers:
+  url: wisereader.io/smartblocks
+
+paths:
+  /submission:
+    post:
+      operationId: submitContent
+      parameters:
+      - name: title
+        in: header
+        schema:
+          $ref: "#/components/schemas/Content"
+
+components:
+  schemas:
+    Content:
+      type: string
+
+      
